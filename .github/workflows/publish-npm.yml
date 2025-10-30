@@ -3,17 +3,17 @@ on:
   release:
     types: [published]
 env:
-  GIT_TERMINAL_PROMPT: 1    
+  GIT_TERMINAL_PROMPT: 1
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6
         with:
-          node-version: '16.14.2'
+          node-version: '24.9.0'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - run: |
